@@ -1,0 +1,77 @@
+# Sistema de Gerenciamento de Biblioteca
+
+Este projeto é um sistema de gerenciamento de biblioteca que permite o cadastro de autores, livros e empréstimos. O sistema oferece funcionalidades para registrar empréstimos de livros e consultar informações sobre os títulos disponíveis e seus autores.
+
+## Funcionalidades
+
+- **Gestão de Autores**: Cadastro de autores com informações como nome e nacionalidade.
+- **Gestão de Livros**: Registro de livros com título, autor, ano de publicação e gênero.
+- **Gestão de Empréstimos**: Registro de empréstimos de livros, incluindo data de empréstimo, data de devolução e nome do usuário.
+- **Consultas Avançadas**: Consultas para verificar os empréstimos em aberto, relatórios sobre livros emprestados e mais.
+
+## Estrutura do Banco de Dados
+
+### Tabelas
+
+- **Autores**:
+  - `AutorID`: Identificador único do autor.
+  - `Nome`: Nome completo do autor.
+  - `Nacionalidade`: Nacionalidade do autor.
+
+- **Livros**:
+  - `LivroID`: Identificador único do livro.
+  - `Titulo`: Título do livro.
+  - `AutorID`: Referência ao autor do livro.
+  - `AnoPublicacao`: Ano de publicação do livro.
+  - `Genero`: Gênero do livro.
+
+- **Emprestimos**:
+  - `EmprestimoID`: Identificador único do empréstimo.
+  - `LivroID`: Referência ao livro emprestado.
+  - `DataEmprestimo`: Data em que o livro foi emprestado.
+  - `DataDevolucao`: Data em que o livro foi devolvido (pode ser NULL).
+  - `NomeUsuario`: Nome do usuário que realizou o empréstimo.
+
+## Consultas e Operações Disponíveis
+
+### Consultas
+
+1. **Listar todos os livros com os nomes de seus autores**:
+   - Exibe todos os livros registrados junto com os nomes de seus respectivos autores e anos de publicação.
+
+2. **Listar os empréstimos em aberto**:
+   - Mostra todos os empréstimos que ainda não foram devolvidos.
+
+3. **Relatório do número de livros emprestados por autor**:
+   - Exibe quantos livros de cada autor foram emprestados.
+
+4. **Livros que foram emprestados mais de uma vez**:
+   - Mostra os títulos de livros que foram emprestados mais de uma vez.
+
+### Atualizações e Deleções
+
+1. **Atualizar a data de devolução de um empréstimo**:
+   - Permite atualizar a data de devolução de um empréstimo específico.
+
+2. **Remover um livro e seus empréstimos associados**:
+   - O sistema permite excluir um livro, removendo também os registros de empréstimos associados.
+
+## Como Usar
+
+1. **Criar o Banco de Dados**:
+   Execute o script SQL fornecido para criar o banco de dados e suas respectivas tabelas.
+
+2. **Inserir Dados**:
+   Insira dados de autores, livros e empréstimos conforme necessário.
+
+3. **Consultar e Manipular Dados**:
+   Utilize as consultas SQL fornecidas para visualizar e modificar os dados.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
+
+## Requisitos
+
+- MySQL ou outro sistema de gerenciamento de banco de dados compatível com SQL.
+- Ferramenta para execução de scripts SQL, como MySQL Workbench ou phpMyAdmin.
